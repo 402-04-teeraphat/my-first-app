@@ -101,5 +101,5 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2)
 
 st.divider()
-st.write("นายธีรภัทร ยามวงศ์ เลขที่ 4 ม.4/"2)
+st.write("นายธีรภัทร ยามวงศ์ เลขที่ 4 ม.4/2")
 
