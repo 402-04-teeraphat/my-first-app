@@ -105,7 +105,7 @@ ans3 = st.text_input(
     "ข้อ 3: Cats love to eat `l e m _ n`. 🍋",
     value=st.session_state.ans3_val,
 )
-ans3 = st.text_input(
+ans4 = st.text_input(
     "ข้อ 4: Cats love to eat `p _ n`. 🖊️ ",
     value=st.session_state.ans4_val,
 )
