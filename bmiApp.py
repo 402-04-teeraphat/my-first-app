@@ -16,7 +16,7 @@ if st.button("คำนวณค่า BMI 🎯"):
     st.write("---")
     st.header(f"ค่า BMI ของคุณคือ: **{bmi:.2f}**")
  
-if bmi < 18.5:
+if bmi < 18.5
     st.write("ผลการแปลผล: **ผอม**")
 elif 18.5 <= bmi < 23.0:
     st.write("ผลการแปลผล: **สุขภาพดี**")
