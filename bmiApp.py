@@ -1,4 +1,4 @@
-import streamlit as import streamlit as st
+import streamlit as st
 
 
 st.markdown("# :red[🏋️ คำนวณค่าดัชนีมวลกาย BMI]")
