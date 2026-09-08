@@ -17,8 +17,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-        }
+            }
 
         .game {
             width: 90%;
