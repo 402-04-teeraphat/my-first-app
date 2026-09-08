@@ -25,12 +25,11 @@
 
         h1 {
             color: #5b4bc4;
-            margin-bottom: 5px;
+            
         }
 
         .subtitle {
-            color: #666;
-            margin-bottom: 20px;
+            
         }
 
         .info {
