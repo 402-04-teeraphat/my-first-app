@@ -1,71 +1,75 @@
-import time
+import streamlit as st
+
+# ตั้งค่าหน้าเว็บ
+st.set_page_config(page_title="Pythagoras Challenge", page_icon="📐")
+
+st.title("📐 Pythagoras Challenge")
+st.write("เกมทายคำตอบทฤษฎีบทพีทาโกรัส")
 
 # ข้อมูลคำถาม
 questions = [
     {
-        "question": "สามเหลี่ยมมุมฉากมีด้านประกอบมุมฉากยาว 3 และ 4 หน่วย ด้านตรงข้ามมุมฉากยาวเท่าไร?",
-        "answers": ["1. 5", "2. 6", "3. 7", "4. 8"],
-        "correct": "1"
+        "question": "1. สามเหลี่ยมมุมฉากมีด้านประกอบมุมฉากยาว 3 และ 4 หน่วย ด้านตรงข้ามมุมฉากยาวเท่าไร?",
+        "options": ["5", "6", "7", "8"],
+        "correct": "5"
     },
     {
-        "question": "ถ้าด้านประกอบมุมฉากยาว 5 และ 12 หน่วย ด้านตรงข้ามมุมฉากยาวเท่าไร?",
-        "answers": ["1. 10", "2. 11", "3. 13", "4. 15"],
-        "correct": "3"
+        "question": "2. ถ้าด้านประกอบมุมฉากยาว 5 และ 12 หน่วย ด้านตรงข้ามมุมฉากยาวเท่าไร?",
+        "options": ["10", "11", "13", "15"],
+        "correct": "13"
     },
     {
-        "question": "สามเหลี่ยมมุมฉากมีด้านตรงข้ามมุมฉากยาว 10 และอีกด้านหนึ่งยาว 6 หน่วย อีกด้านยาวเท่าไร?",
-        "answers": ["1. 7", "2. 8", "3. 9", "4. 10"],
-        "correct": "2"
+        "question": "3. สามเหลี่ยมมุมฉากมีด้านตรงข้ามมุมฉากยาว 10 และอีกด้านหนึ่งยาว 6 หน่วย อีกด้านยาวเท่าไร?",
+        "options": ["7", "8", "9", "10"],
+        "correct": "8"
     },
     {
-        "question": "ข้อใดคือสูตรทฤษฎีบทพีทาโกรัส?",
-        "answers": ["1. a² + b² = c²", "2. a + b = c", "3. a² - b² = c", "4. 2a + 2b = c"],
-        "correct": "1"
+        "question": "4. ข้อใดคือสูตรทฤษฎีบทพีทาโกรัส?",
+        "options": ["a² + b² = c²", "a + b = c", "a² - b² = c", "2a + 2b = c"],
+        "correct": "a² + b² = c²"
     },
     {
-        "question": "ด้านของสามเหลี่ยมมุมฉากยาว 8, 15 และ 17 หน่วย ด้านใดเป็นด้านตรงข้ามมุมฉาก?",
-        "answers": ["1. 8", "2. 15", "3. 17", "4. ทั้งสามด้าน"],
-        "correct": "3"
+        "question": "5. ด้านของสามเหลี่ยมมุมฉากยาว 8, 15 และ 17 หน่วย ด้านใดเป็นด้านตรงข้ามมุมฉาก?",
+        "options": ["8", "15", "17", "ทั้งสามด้าน"],
+        "correct": "17"
     }
 ]
 
-def start_game():
+# ใช้ st.form เพื่อรวบรวมคำตอบและส่งทีเดียว
+with st.form("quiz_form"):
+    user_answers = []
+    
+    for idx, q in enumerate(questions):
+        st.subheader(q["question"])
+        choice = st.radio(
+            "เลือกคำตอบ:",
+            q["options"],
+            key=f"q_{idx}",
+            index=None
+        )
+        user_answers.append(choice)
+        st.write("---")
+
+    submitted = st.form_submit_button("ส่งคำตอบ 🎯")
+
+if submitted:
     score = 0
-    total_questions = len(questions)
-
-    print("=" * 40)
-    print("📐 Pythagoras Challenge")
-    print("เกมทายคำตอบทฤษฎีบทพีทาโกรัส")
-    print("=" * 40)
-    print("🎯 ตอบคำถามโดยการพิมพ์หมายเลขข้อ 1-4")
-    print()
-
-    for idx, q in enumerate(questions, 1):
-        print(f"\nข้อ {idx}/{total_questions}: {q['question']}")
-        for ans in q["answers"]:
-            print(f"  {ans}")
-        
-        user_answer = input("\nคำตอบของคุณ (1-4): ").strip()
-
-        if user_answer == q["correct"]:
-            print("✅ ถูกต้อง! +1 คะแนน")
+    st.header("🏆 สรุปผลคะแนน")
+    
+    for idx, q in enumerate(questions):
+        user_ans = user_answers[idx]
+        if user_ans == q["correct"]:
             score += 1
+            st.success(f"ข้อ {idx+1}: ถูกต้อง! (คำตอบ: {q['correct']})")
         else:
-            print(f"❌ ผิด! คำตอบที่ถูกต้องคือข้อ {q['correct']}")
-
-    # สรุปผล
-    print("\n" + "=" * 40)
-    print(f"🏆 Game Over! คะแนนของคุณ: {score} / {total_questions}")
-    print("=" * 40)
-
+            st.error(f"ข้อ {idx+1}: ผิด! คุณตอบ '{user_ans if user_ans else 'ไม่ได้เลือก'}' (คำตอบที่ถูกต้อง: {q['correct']})")
+            
+    st.subheader(f"คะแนนรวมของคุณ: {score} / {len(questions)}")
+    
     if score == 5:
-        print("🏆 ระดับเทพ! คุณเข้าใจทฤษฎีบทพีทาโกรัสดีมาก!")
+        st.balloons()
+        st.info("🏆 ระดับเทพ! คุณเข้าใจทฤษฎีบทพีทาโกรัสดีมาก!")
     elif score >= 3:
-        print("🔥 เก่งมาก! แต่ยังฝึกเพิ่มได้อีกนิด")
-    elif score >= 1:
-        print("💪 พยายามอีกนิด แล้วจะเก่งขึ้นแน่นอน!")
+        st.info("🔥 เก่งมาก! แต่ยังฝึกเพิ่มได้อีกนิด")
     else:
-        print("📚 ลองทบทวนทฤษฎีบทพีทาโกรัสแล้วเล่นใหม่!")
-
-if __name__ == "__main__":
-    start_game()
+        st.info("📚 ลองทบทวนทฤษฎีบทพีทาโกรัสแล้วลองใหม่อีกครั้ง!")
