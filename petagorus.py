@@ -21,8 +21,7 @@
 
         .game {
             width: 90%;
-            max-width: 650px;
-            background: white;
+             background: white;
             padding: 30px;
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
