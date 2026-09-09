@@ -69,6 +69,7 @@ if submitted:
     if score == 5:
         st.balloons()
         st.info("สุดยอดไปเลยเพื่อน 🏆")
+    
     elif score >= 3:
         st.info("เกือบถูกแล้วเพื่อน🔥")
     else:
@@ -79,6 +80,5 @@ if submitted:
     st.write("    -นายอินทรัตน์  สิงห์แก้ว เลขที่6 ม.4/2")
     st.write("     -นายสิรภพ ฝั้นถาวร เลขที่12 ม.4/2")
     st.write("    -นายตฤนภัทร แสงปรีดานนท์ เลขที่39 ม.4/2")
-st.error("😱 SURPRISE!")
-        # แก้ไขพารามิเตอร์เป็น use_container_width และใช้ URL รูปที่เข้าถึงได้แน่นอน
-        jumpscare_url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Pythagoras_in_Thomas_Stanley_History_of_Philosophy.jpg/250px-Pythagoras_in_Thomas_Stanley_History_of_Philosophy.jpg?utm_source=th.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
+        jumpscare_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kapitolinischer_Pythagoras_befruchtet_2.jpg/800px-Kapitolinischer_Pythagoras_befruchtet_2.jpg"
+        st.image(jumpscare_url, use_container_width=True)
