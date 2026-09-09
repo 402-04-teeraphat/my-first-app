@@ -81,4 +81,4 @@ if submitted:
     st.write("    -นายตฤนภัทร แสงปรีดานนท์ เลขที่39 ม.4/2")
 st.error("😱 SURPRISE!")
         # แก้ไขพารามิเตอร์เป็น use_container_width และใช้ URL รูปที่เข้าถึงได้แน่นอน
-        jumpscare_url = "https://th.wikipedia.org/wiki/%E0%B8%9E%E0%B8%B5%E0%B8%97%E0%B8%B2%E0%B9%82%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%AA"
+        jumpscare_url = "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Pythagoras_in_Thomas_Stanley_History_of_Philosophy.jpg/250px-Pythagoras_in_Thomas_Stanley_History_of_Philosophy.jpg?utm_source=th.wikipedia.org&utm_campaign=parser&utm_content=thumbnail"
