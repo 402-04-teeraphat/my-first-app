@@ -80,5 +80,5 @@ if submitted:
     st.write("    -นายอินทรัตน์  สิงห์แก้ว เลขที่6 ม.4/2")
     st.write("     -นายสิรภพ ฝั้นถาวร เลขที่12 ม.4/2")
     st.write("    -นายตฤนภัทร แสงปรีดานนท์ เลขที่39 ม.4/2")
-        jumpscare_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Kapitolinischer_Pythagoras_befruchtet_2.jpg/800px-Kapitolinischer_Pythagoras_befruchtet_2.jpg"
+        jumpscare_url = "https://s.isanook.com/gu/0/ui/0/2691/733__20032007025309.jpg?ip/crop/w300/q90/webp"
         st.image(jumpscare_url, use_container_width=True)
