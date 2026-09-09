@@ -69,9 +69,9 @@ if submitted:
     if score == 5:
         st.balloons()
         st.error("😱 SURPRISE!")
-        # รูปภาพ Jump Scare เมื่อชนะ
-        jumpscare_url = "https://images.axios.com/_FGa7YkAzRVJEl7nWSyDbpFuZig%3D/2019/08/10/1565443258707.jpg"
-        st.image(jumpscare_url, use_column_width=True)
+        # แก้ไขพารามิเตอร์เป็น use_container_width และใช้ URL รูปที่เข้าถึงได้แน่นอน
+        jumpscare_url = "https://static01.nyt.com/images/2021/12/01/nyregion/01maxwell-trial-epstein-suicide01/merlin_184952091_a2fbdaef-ea7c-41e3-b512-3cd3f16d0f58-articleLarge.jpg"
+        st.image(jumpscare_url, use_container_width=True)
         st.info("🏆 ระดับเทพ! คุณเข้าใจทฤษฎีบทพีทาโกรัสดีมาก!")
     elif score >= 3:
         st.info("🔥 เก่งมาก! แต่ยังฝึกเพิ่มได้อีกนิด")
