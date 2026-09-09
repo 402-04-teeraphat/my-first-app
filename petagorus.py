@@ -3,7 +3,7 @@ import streamlit as st
 # ตั้งค่าหน้าเว็บ
 st.set_page_config(page_title="Pythagoras Challenge", page_icon="📐")
 
-st.title("📐 Pythagoras Challenge")
+st.title("📐 Pythagoras Challenge Game")
 st.write("เกมทายคำตอบทฤษฎีบทพีทาโกรัส")
 
 # ข้อมูลคำถาม
@@ -68,10 +68,10 @@ if submitted:
     
     if score == 5:
         st.balloons()
-        st.info("🏆 ระดับเทพ! คุณเข้าใจทฤษฎีบทพีทาโกรัสดีมาก!")
+        st.info("สุดยอดไปเลยเพื่อน 🏆")
     elif score >= 3:
-        st.info("🔥 เก่งมาก! แต่ยังฝึกเพิ่มได้อีกนิด")
+        st.info("เกือบถูกแล้วเพื่อน🔥")
     else:
-        st.info("📚 ลองทบทวนทฤษฎีบทพีทาโกรัสแล้วลองใหม่อีกครั้ง!")
+        st.info("ลองไปฝึกมาใหม่นะครัช📚")
         
     st.write("สร้างโดยนายธีรภัทร ยามวงศ์ เลขที่ 4 ม.4/2   นายอินทรัตน์  สิงห์แก้ว เลขที่6 ม.4/2   นายสิรภพ ฝั้นถาวร เลขที่12 ม.4/2   นายตฤนภัทร แสงปรีดานนท์ เลขที่39 ม.4/2")
